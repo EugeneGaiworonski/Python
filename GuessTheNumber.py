@@ -1,4 +1,4 @@
-﻿#  ********************************************************************************
+﻿# ********************************************************************************
 # Source : GuessTheNumber.py / Python 3.9
 # Created : 09.03.2023 
 # Modified : - 
@@ -13,8 +13,8 @@
 # сообщение <<Вы угадали, поздравляем!>>.
 # ********************************************************************************
 
-from os import system, times
-from random import *
+from os import system
+from random import randint, seed
 
 # FUNCTIONS 
 # ********************************************************************************
@@ -81,7 +81,7 @@ while  not 0 <= language <= 2:
 
 while True:
 	printс(lets_play[language])
-	times = 6 # число попыток
+	turns = 6 # число попыток
 	seed(randint(1, 100))
 	guessed_number = randint(1, 100)
 	# debug
@@ -92,17 +92,17 @@ while True:
 		if player_number == guessed_number:
 			printс(win[language])
 			break
-		elif times == 0:
+		elif turns == 0:
 			printс(loss[language])
 			break
-		elif times > 0 and player_number > guessed_number:
+		elif turns > 0 and player_number > guessed_number:
 			printс(too_much[language])
-			times -= 1
-			printс(next_time[language] + str(6 - times + 1))
+			turns -= 1
+			printс(next_time[language] + str(6 - turns + 1))
 		else:
 			printс(too_less[language])
-			times -= 1
-			printс(next_time[language] + str(6 - times + 1))
+			turns -= 1
+			printс(next_time[language] + str(6 - turns + 1))
 
 	if ask(play_again[language], '1', '2'):
 		printс(see_you[language])

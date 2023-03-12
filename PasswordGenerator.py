@@ -8,11 +8,8 @@
 # включить, а какие исключить.
 # ********************************************************************************
 
-from asyncio import exceptions
 from os import system
-from pickle import FALSE, LIST, TRUE
-from random import *
-from unicodedata import digit
+from random import randint, seed
 
 # FUNCTIONS 
 # ********************************************************************************
@@ -47,7 +44,7 @@ digits				= '0123456789'
 lowercase_letters	= 'abcdefghijklmnopqrstuvwxyz'
 uppercase_letters	= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 punctuation			= '!#$%&*+-=?@^_'
-exceptions			= 'iIl1Lo0O'
+exclusions			= 'iIl1Lo0O'
 chars				= ''
 buffer_string		= ''
 
@@ -101,7 +98,7 @@ while True:
 	if is_noexceptions:
 		buffer_string = ''
 		for idx in range(len(chars)):
-			if chars[idx] not in exceptions:
+			if chars[idx] not in exclusions:
 				buffer_string += chars[idx]
 		chars = buffer_string
 	for _ in range(quantity):
