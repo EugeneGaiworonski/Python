@@ -1,6 +1,6 @@
 ﻿
 # ********************************************************************************
-# Source : GuessTheNumber.py / Python 3.9
+# Source : CaesarCode.py / Python 3.9
 # Created : 12.03.2023 
 # Modified : - 
 # Author : Евгений Гайворонский
